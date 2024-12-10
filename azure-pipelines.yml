@@ -27,27 +27,27 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj;!**/Os.Client.Demo.csproj'
+    packagesToPack: '**/*.csproj;!**/OrlemSoftware.Client.Demo.csproj'
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'nugetVer'
 
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Serialization.Text.Json.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Serialization.Text.Json.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Logging.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Logging.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Serialization.Text.Json.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Serialization.Text.Json.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
