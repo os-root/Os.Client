@@ -30,9 +30,13 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'nugetVer'
 
-- task: DotNetCoreCLI@2
+- task: NuGetAuthenticate@1
+  inputs:
+    nuGetServiceConnections: 'nuget.org'
+
+- task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget.org'
