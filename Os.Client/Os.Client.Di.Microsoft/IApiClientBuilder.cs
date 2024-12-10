@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Di.Microsoft;
+namespace OrlemSoftware.Client.Di.Microsoft;
 
 public interface IApiClientBuilder<TConfiguration>
     where TConfiguration : IApiClientConfiguration

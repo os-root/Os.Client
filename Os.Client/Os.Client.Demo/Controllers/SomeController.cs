@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Os.Client.Demo.Controllers;
+namespace OrlemSoftware.Client.Demo.Controllers;
 
 [ApiController]
 [Route("[controller]")]

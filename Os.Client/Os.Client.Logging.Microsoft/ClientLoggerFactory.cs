@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Logging.Microsoft;
+namespace OrlemSoftware.Client.Logging.Microsoft;
 
 internal class ClientLoggerFactory<TConfiguration> : IClientLoggerFactory<TConfiguration>
     where TConfiguration : IApiClientConfiguration

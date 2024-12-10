@@ -1,6 +1,6 @@
-﻿using Os.Client.Interfaces;
+﻿using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Internal;
+namespace OrlemSoftware.Client.Internal;
 
 public class GenericResponseSuccessChecker<TConfiguration> : IResponseSuccessChecker<TConfiguration>
     where TConfiguration : IApiClientConfiguration

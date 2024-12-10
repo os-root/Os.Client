@@ -1,8 +1,8 @@
 ﻿using System.Net.Http.Headers;
-using Os.Client.Interfaces;
-using Os.Client.Internal;
+using OrlemSoftware.Client.Interfaces;
+using OrlemSoftware.Client.Internal;
 
-namespace Os.Client;
+namespace OrlemSoftware.Client;
 
 public abstract class BaseApiClient
 {

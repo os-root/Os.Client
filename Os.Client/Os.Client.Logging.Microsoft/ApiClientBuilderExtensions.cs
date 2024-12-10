@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Os.Client.Di.Microsoft;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Di.Microsoft;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Logging.Microsoft;
+namespace OrlemSoftware.Client.Logging.Microsoft;
 
 public static class ApiClientBuilderExtensions
 {

@@ -1,8 +1,8 @@
 ﻿using System.Net.Mime;
 using System.Text.Json;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client;
+namespace OrlemSoftware.Client;
 
 public class DefaultClientJson<TConfiguration> : IRequestSerializer<TConfiguration>, IResponseDeserializer<TConfiguration>
     where TConfiguration : IApiClientConfiguration

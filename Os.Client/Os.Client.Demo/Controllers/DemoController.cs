@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using Os.Client.Demo.ApiClient.Config;
-using Os.Client.Demo.ApiClient.Models;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Demo.ApiClient.Config;
+using OrlemSoftware.Client.Demo.ApiClient.Models;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Demo.Controllers;
+namespace OrlemSoftware.Client.Demo.Controllers;
 
 [ApiController]
 [Route("[controller]")]

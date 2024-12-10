@@ -1,4 +1,4 @@
-﻿namespace Os.Client.Internal;
+﻿namespace OrlemSoftware.Client.Internal;
 
 internal static class Extensions
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Os.Client.Demo.ApiClient.Models;
+namespace OrlemSoftware.Client.Demo.ApiClient.Models;
 
 internal record ApiTestResult
 {

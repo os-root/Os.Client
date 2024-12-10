@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Os.Client.Di.Microsoft\Os.Client.Di.Microsoft.csproj" />
-    <ProjectReference Include="..\Os.Client.Logging.Microsoft\Os.Client.Logging.Microsoft.csproj" />
-    <ProjectReference Include="..\Os.Client\Os.Client.csproj" />
+    <ProjectReference Include="..\Os.Client.Di.Microsoft\OrlemSoftware.Client.Di.Microsoft.csproj" />
+    <ProjectReference Include="..\Os.Client.Logging.Microsoft\OrlemSoftware.Client.Logging.Microsoft.csproj" />
+    <ProjectReference Include="..\Os.Client\OrlemSoftware.Client.csproj" />
   </ItemGroup>
 
 </Project>

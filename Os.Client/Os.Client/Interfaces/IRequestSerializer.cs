@@ -1,4 +1,4 @@
-﻿namespace Os.Client.Interfaces;
+﻿namespace OrlemSoftware.Client.Interfaces;
 
 public interface IRequestSerializer<TConfiguration>: IRequestSerializer
     where TConfiguration : IApiClientConfiguration

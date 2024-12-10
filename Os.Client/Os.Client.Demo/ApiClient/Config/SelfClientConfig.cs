@@ -1,6 +1,6 @@
-﻿using Os.Client.Interfaces;
+﻿using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Demo.ApiClient.Config;
+namespace OrlemSoftware.Client.Demo.ApiClient.Config;
 
 public record SelfClientConfig : IApiClientConfiguration
 {

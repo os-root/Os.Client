@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Os.Client.Di.Microsoft.Internal;
-using Os.Client.Interfaces;
-using Os.Client.Internal;
+using OrlemSoftware.Client.Di.Microsoft.Internal;
+using OrlemSoftware.Client.Interfaces;
+using OrlemSoftware.Client.Internal;
 
-namespace Os.Client.Di.Microsoft;
+namespace OrlemSoftware.Client.Di.Microsoft;
 
 public static class DependencyInjection
 {

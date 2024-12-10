@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Os.Client\Os.Client.csproj" />
+    <ProjectReference Include="..\Os.Client.Di.Microsoft\OrlemSoftware.Client.Di.Microsoft.csproj" />
+    <ProjectReference Include="..\Os.Client.Serialization.Text.Json\OrlemSoftware.Client.Serialization.Text.Json.csproj" />
   </ItemGroup>
 
 </Project>

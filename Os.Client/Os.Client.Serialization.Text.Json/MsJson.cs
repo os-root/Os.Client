@@ -1,8 +1,8 @@
 ﻿using System.Net.Mime;
 using System.Text.Json;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client.Serialization.Text.Json;
+namespace OrlemSoftware.Client.Serialization.Text.Json;
 
 public sealed class MsJson<TConfiguration> : IRequestSerializer<TConfiguration>, IResponseDeserializer<TConfiguration>
     where TConfiguration : IApiClientConfiguration

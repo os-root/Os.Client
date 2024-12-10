@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Interfaces;
 
-namespace Os.Client;
+namespace OrlemSoftware.Client;
 
 public abstract record BaseApiRequest
 {

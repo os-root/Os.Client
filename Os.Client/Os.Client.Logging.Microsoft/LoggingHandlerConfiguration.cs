@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Os.Client.Logging.Microsoft;
+namespace OrlemSoftware.Client.Logging.Microsoft;
 
 public record LoggingHandlerConfiguration
 {
