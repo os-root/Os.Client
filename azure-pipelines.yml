@@ -22,7 +22,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj;!**/Os.Client.Demo.csproj'
+    projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -34,20 +34,25 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json'
+    errorActionPreference: 'continue'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json'
+    errorActionPreference: 'continue'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Serialization.Text.Json.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Serialization.Text.Json.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://ap.nuget.org/v3/index.json'
+    errorActionPreference: 'continue'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Logging.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Logging.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json'
+    errorActionPreference: 'continue'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Serialization.Text.Json.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/Os.Client.Serialization.Text.Json.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json'
+    errorActionPreference: 'continue'
