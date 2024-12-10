@@ -21,6 +21,11 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'build'
+    projects: '**/*.csproj;!**/Os.Client.Demo.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj;!**/Os.Client.Demo.csproj'
     versioningScheme: 'byEnvVar'
