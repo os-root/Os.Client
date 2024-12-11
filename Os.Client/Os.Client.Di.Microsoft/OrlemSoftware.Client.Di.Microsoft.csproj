@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OrlemSoftware.Client.Abstractions\OrlemSoftware.Client.Abstractions.csproj" />
     <ProjectReference Include="..\Os.Client\OrlemSoftware.Client.csproj" />
   </ItemGroup>
 

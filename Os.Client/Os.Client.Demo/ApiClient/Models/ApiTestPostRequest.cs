@@ -1,6 +1,6 @@
 ﻿namespace OrlemSoftware.Client.Demo.ApiClient.Models;
 
-internal record ApiTestPostRequest : BaseApiRequest
+internal record ApiTestPostRequest : ApiClientRequest
 {
     public ApiTestPostRequest(string state)
         : base($"some", HttpMethod.Post)

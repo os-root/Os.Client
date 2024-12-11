@@ -1,6 +1,6 @@
-﻿using OrlemSoftware.Client.Interfaces;
+﻿using OrlemSoftware.Client.Abstractions;
 
-namespace OrlemSoftware.Client.Internal;
+namespace OrlemSoftware.Client.Generic;
 
 public class GenericApiClient<TConfiguration> : BaseApiClient, IApiClient<TConfiguration>
     where TConfiguration : IApiClientConfiguration

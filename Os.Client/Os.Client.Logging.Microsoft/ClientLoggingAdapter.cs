@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrlemSoftware.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
 
 namespace OrlemSoftware.Client.Logging.Microsoft;
 

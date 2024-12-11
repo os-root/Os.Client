@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrlemSoftware.Client.Serial
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{5723F0F3-8591-4E9E-AD4A-89ECA193BDA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrlemSoftware.Client.Demo", "Os.Client.Demo\OrlemSoftware.Client.Demo.csproj", "{2234D058-690D-4432-B051-C591DB206365}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrlemSoftware.Client.Demo", "Os.Client.Demo\OrlemSoftware.Client.Demo.csproj", "{2234D058-690D-4432-B051-C591DB206365}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrlemSoftware.Client.Abstractions", "OrlemSoftware.Client.Abstractions\OrlemSoftware.Client.Abstractions.csproj", "{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{2234D058-690D-4432-B051-C591DB206365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2234D058-690D-4432-B051-C591DB206365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2234D058-690D-4432-B051-C591DB206365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

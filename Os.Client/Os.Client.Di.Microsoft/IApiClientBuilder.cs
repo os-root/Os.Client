@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OrlemSoftware.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
 
 namespace OrlemSoftware.Client.Di.Microsoft;
 

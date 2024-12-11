@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OrlemSoftware.Client.Abstractions;
 using OrlemSoftware.Client.Di.Microsoft;
-using OrlemSoftware.Client.Interfaces;
 
 namespace OrlemSoftware.Client.Logging.Microsoft;
 

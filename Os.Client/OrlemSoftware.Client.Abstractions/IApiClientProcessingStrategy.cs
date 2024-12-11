@@ -1,4 +1,4 @@
-﻿namespace OrlemSoftware.Client.Interfaces;
+﻿namespace OrlemSoftware.Client.Abstractions;
 
 public interface IApiClientProcessingStrategy
 {

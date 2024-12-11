@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using OrlemSoftware.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
 
 namespace OrlemSoftware.Client;
 
-public abstract record BaseApiRequest
+public abstract record ApiClientRequest: IApiClientRequest
 {
     private readonly string _urlTemplate;
     private readonly HttpMethod _method;
@@ -22,7 +22,7 @@ public abstract record BaseApiRequest
         set => InternalSerializer = value;
     }
 
-    protected BaseApiRequest(
+    protected ApiClientRequest(
             string urlTemplate,
             HttpMethod method,
             IReadOnlyCollection<KeyValuePair<string, string>> headers
@@ -33,7 +33,7 @@ public abstract record BaseApiRequest
         _headers = headers;
     }
 
-    protected BaseApiRequest(
+    protected ApiClientRequest(
             string urlTemplate,
             HttpMethod method
         ) : this(urlTemplate, method, Array.Empty<KeyValuePair<string, string>>())
@@ -101,14 +101,14 @@ public abstract record BaseApiRequest
     internal string GetContentType() => InternalSerializer.ContentType;
 }
 
-public abstract record BaseApiRequest<TResponse> : BaseApiRequest
+public abstract record ApiClientRequest<TResponse> : ApiClientRequest, IApiClientRequest<TResponse>
 {
-    protected BaseApiRequest(string urlTemplate, HttpMethod method, IReadOnlyCollection<KeyValuePair<string, string>> headers)
+    protected ApiClientRequest(string urlTemplate, HttpMethod method, IReadOnlyCollection<KeyValuePair<string, string>> headers)
         : base(urlTemplate, method, headers)
     {
     }
 
-    protected BaseApiRequest(string urlTemplate, HttpMethod method)
+    protected ApiClientRequest(string urlTemplate, HttpMethod method)
         : base(urlTemplate, method)
     {
     }

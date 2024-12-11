@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OrlemSoftware.Client.Interfaces;
-using OrlemSoftware.Client.Internal;
+using OrlemSoftware.Client.Abstractions;
+using OrlemSoftware.Client.Generic;
 
 namespace OrlemSoftware.Client.Di.Microsoft.Internal;
 

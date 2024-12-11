@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using OrlemSoftware.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
 
 namespace OrlemSoftware.Client.Serialization.Text.Json;
 

@@ -3,8 +3,8 @@
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
-trigger:
-- release/*
+# trigger:
+# - release/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -31,6 +31,10 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'nugetVer'
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Abstractions.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'

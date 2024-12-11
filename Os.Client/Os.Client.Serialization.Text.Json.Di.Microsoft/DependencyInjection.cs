@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.DependencyInjection;
+using OrlemSoftware.Client.Abstractions;
 using OrlemSoftware.Client.Di.Microsoft;
-using OrlemSoftware.Client.Interfaces;
 
 namespace OrlemSoftware.Client.Serialization.Text.Json.Di.Microsoft
 {

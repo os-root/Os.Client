@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\OrlemSoftware.Client.Abstractions\OrlemSoftware.Client.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>
