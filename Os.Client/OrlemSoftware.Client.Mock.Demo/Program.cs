@@ -12,8 +12,7 @@ internal class Program
 
         serviceCollection.AddMockApiClient<TestConfig>()
             .AddRequestHandler<TestRequest, TestResponse>(
-                s => true,
-                r => Task.FromResult(new TestResponse
+                (s, r) => Task.FromResult(new TestResponse
                 {
                     State = r.State,
                     Response = "I am test!"

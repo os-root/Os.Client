@@ -39,4 +39,18 @@ internal class MockApiClientBuilder<TConfiguration> : IMockApiClientBuilder<TCon
 
         return this;
     }
+
+    public IMockApiClientBuilder<TConfiguration> AddRequestHandler<TRequest, TResponse>(HandlingDelegate<TRequest, TResponse> handler)
+        where TRequest : IApiClientRequest<TResponse>
+    {
+        _services.AddSingleton<MockApiRequestHandler<TConfiguration>>(
+            services => new MockApiRequestHandler<TConfiguration, TResponse>(
+                services,
+                x => x is TRequest,
+                (s, x) => handler(s, (TRequest)x)
+            )
+        );
+
+        return this;
+    }
 }
