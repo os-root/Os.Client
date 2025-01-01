@@ -12,13 +12,11 @@ public class MockApiClient<TConfiguration> : IApiClient<TConfiguration>
         _requestHandlers = requestHandlers;
     }
 
-    public async Task<TResponse> Send<TResponse>(IApiClientRequest<TResponse> request, CancellationToken cancellationToken) 
-        => await Send(request);
+    public Task<TResponse> Send<TResponse>(IApiClientRequest<TResponse> request, CancellationToken cancellationToken) 
+        => Send(request);
 
-    public async Task Send(IApiClientRequest request, CancellationToken cancellationToken)
-    {
-        await Send(request);
-    }
+    public Task Send(IApiClientRequest request, CancellationToken cancellationToken)
+        => Send(request);
 
     public async Task<TResponse> Send<TResponse>(IApiClientRequest<TResponse> request)
     {

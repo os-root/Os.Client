@@ -13,38 +13,25 @@ internal class MockApiClientBuilder<TConfiguration> : IMockApiClientBuilder<TCon
         _services = services;
     }
 
-    public IMockApiClientBuilder<TConfiguration> AddRequestHandler<TRequest, TResponse>(
-        Func<TRequest, bool> canRunCheck,
-        Func<TRequest, Task<TResponse>> run
-    )
-        where TRequest : IApiClientRequest<TResponse>
-        => AddRequestHandler(
-            canRunCheck,
-            (_, r) => run(r)
-        );
-
-    public IMockApiClientBuilder<TConfiguration> AddRequestHandler<TRequest, TResponse>(
-            Func<TRequest, bool> canRunCheck,
-            Func<IServiceProvider, TRequest, Task<TResponse>> run
-        )
+    public IMockApiClientBuilder<TConfiguration> AddRequestHandler<TRequest, TResponse>(HandlingDelegate<TRequest, TResponse> handler)
         where TRequest : IApiClientRequest<TResponse>
     {
         _services.AddSingleton<MockApiRequestHandler<TConfiguration>>(
             services => new MockApiRequestHandler<TConfiguration, TResponse>(
                 services,
-                x => x is TRequest tr && canRunCheck(tr),
-                (s, x) => run(s, (TRequest)x)
+                x => x is TRequest,
+                (s, x) => handler(s, (TRequest)x)
             )
         );
 
         return this;
     }
 
-    public IMockApiClientBuilder<TConfiguration> AddRequestHandler<TRequest, TResponse>(HandlingDelegate<TRequest, TResponse> handler)
-        where TRequest : IApiClientRequest<TResponse>
+    public IMockApiClientBuilder<TConfiguration> AddRequestHandler<TRequest>(HandlingDelegate<TRequest> handler)
+        where TRequest : IApiClientRequest
     {
         _services.AddSingleton<MockApiRequestHandler<TConfiguration>>(
-            services => new MockApiRequestHandler<TConfiguration, TResponse>(
+            services => new MockApiRequestHandler<TConfiguration>(
                 services,
                 x => x is TRequest,
                 (s, x) => handler(s, (TRequest)x)

@@ -17,7 +17,13 @@ internal class Program
                     State = r.State,
                     Response = "I am test!"
                 })
-            );
+            )
+            .AddRequestHandler<TestRequest3>((s, r) =>
+            {
+                Console.WriteLine($"Running no result request. Request state: {r.State}");
+                return Task.CompletedTask;
+            })
+            ;
 
         var sp = serviceCollection.BuildServiceProvider();
 
@@ -36,7 +42,12 @@ internal class Program
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine($"Caught expected exception:\r\n{e}");
         }
+
+        await apiClient.Send(new TestRequest3
+        {
+            State = "Some state"
+        });
     }
 }
