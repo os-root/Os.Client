@@ -14,15 +14,17 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
+steps:
+
 - script: |
     echo "##vso[task.setvariable variable=FullBranchName]$(Build.SourceBranchName)"
     echo "##vso[task.setvariable variable=branchNugetVer]${FullBranchName:8}"
   displayName: 'Extract version from branch name'
 
-- script: echo "Version: $(branchNugetVer)"
+- script: |
+    echo "Version: $(branchNugetVer)"
   displayName: 'Display extracted version'
 
-steps:
 - task: UseDotNet@2
   inputs:
     version: '8.x'
