@@ -42,11 +42,7 @@ public abstract class BaseApiClient
         try
         {
             if (!await CheckIfResponseSucceeded(response))
-                throw new ApiException
-                {
-                    StatusCode = (int)response.StatusCode,
-                    RawResponse = await response.Content.ReadAsStringAsync(cancellationToken)
-                };
+                throw new ApiException((int)response.StatusCode, await response.Content.ReadAsStringAsync(cancellationToken));
 
             var responseStr = await response.Content.ReadAsStreamAsync(cancellationToken);
 
@@ -59,11 +55,7 @@ public abstract class BaseApiClient
         }
         catch (Exception e)
         {
-            throw new ApiException(e)
-            {
-                StatusCode = (int)response.StatusCode,
-                RawResponse = await response.Content.ReadAsStringAsync(cancellationToken)
-            };
+            throw new ApiException(e, (int)response.StatusCode, await response.Content.ReadAsStringAsync(cancellationToken));
         }
     }
 
@@ -71,11 +63,8 @@ public abstract class BaseApiClient
     {
         var response = await SendInternal(request, cancellationToken);
         if (!await CheckIfResponseSucceeded(response))
-            throw new ApiException
-            {
-                StatusCode = (int)response.StatusCode,
-                RawResponse = await response.Content.ReadAsStringAsync(cancellationToken)
-            };
+            throw new ApiException((int) response.StatusCode,
+                await response.Content.ReadAsStringAsync(cancellationToken));
     }
 
     private async Task<HttpResponseMessage> SendInternal(IApiClientRequest req, CancellationToken cancellationToken)
