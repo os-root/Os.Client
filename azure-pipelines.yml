@@ -18,7 +18,7 @@ steps:
 
 - script: |
     echo "Source Branch Name: $(Build.SourceBranchName)"
-    echo "##vso[task.setvariable variable=branchNugetVer]${Build.SourceBranchName}"
+    echo "##vso[task.setvariable variable=branchNugetVer]$(Build.SourceBranchName)"
   displayName: 'Extract version from branch name'
 
 - script: |
