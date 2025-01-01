@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using Os.Client.Demo.ApiClient.Config;
-using Os.Client.Demo.ApiClient.Models;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
+using OrlemSoftware.Client.Demo.ApiClient.Config;
+using OrlemSoftware.Client.Demo.ApiClient.Models;
 
-namespace Os.Client.Demo.Controllers;
+namespace OrlemSoftware.Client.Demo.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -21,7 +21,7 @@ public class DemoController : ControllerBase
     public async Task<IActionResult> TestApiGet([FromQuery] string state)
     {
         var req = new ApiTestGetRequest(state);
-        var result = await _apiClient.SendAsync(req);
+        var result = await _apiClient.Send(req);
         return Ok(result);
     }
 
@@ -29,7 +29,7 @@ public class DemoController : ControllerBase
     public async Task<IActionResult> TestApiPost([FromQuery] string state)
     {
         var req = new ApiTestPostRequest(state);
-        await _apiClient.SendAsync(req);
+        await _apiClient.Send(req);
         return Ok();
     }
 }

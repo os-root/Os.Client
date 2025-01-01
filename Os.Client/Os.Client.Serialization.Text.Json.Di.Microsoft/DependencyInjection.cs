@@ -1,9 +1,9 @@
-﻿using Os.Client.Di.Microsoft;
-using Os.Client.Interfaces;
-using System.Text.Json;
+﻿using System.Text.Json;
 using Microsoft.Extensions.DependencyInjection;
+using OrlemSoftware.Client.Abstractions;
+using OrlemSoftware.Client.Di.Microsoft;
 
-namespace Os.Client.Serialization.Text.Json.Di.Microsoft
+namespace OrlemSoftware.Client.Serialization.Text.Json.Di.Microsoft
 {
     public static class DependencyInjection
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Os.Client.Interfaces;
-using Os.Client.Internal;
+using OrlemSoftware.Client.Abstractions;
+using OrlemSoftware.Client.Generic;
 
-namespace Os.Client.Di.Microsoft.Internal;
+namespace OrlemSoftware.Client.Di.Microsoft.Internal;
 
 internal class ApiClientBuilder<TConfiguration> : IApiClientBuilder<TConfiguration>
     where TConfiguration : IApiClientConfiguration

@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
 
-namespace Os.Client.Serialization.Text.Json;
+namespace OrlemSoftware.Client.Serialization.Text.Json;
 
 public sealed class JsonSerializerOptionsFactory<TConfiguration>
     where TConfiguration : IApiClientConfiguration

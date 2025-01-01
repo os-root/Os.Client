@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Os.Client.Di.Microsoft.Internal;
-using Os.Client.Interfaces;
-using Os.Client.Internal;
+using OrlemSoftware.Client.Abstractions;
+using OrlemSoftware.Client.Di.Microsoft.Internal;
+using OrlemSoftware.Client.Generic;
 
-namespace Os.Client.Di.Microsoft;
+namespace OrlemSoftware.Client.Di.Microsoft;
 
 public static class DependencyInjection
 {
@@ -15,7 +15,6 @@ public static class DependencyInjection
         services.AddSingleton(configuration);
         services.AddTransient<TApiClient>();
         services.AddTransient<IApiClient<TConfiguration>>(s => s.GetRequiredService<TApiClient>());
-        services.AddTransient<IApiClient>(s => s.GetRequiredService<TApiClient>());
         var httpClientBuilder = services.AddHttpClient<TApiClient>(cl => SetHttpClient(cl, configuration));
 
         services.AddTransient<TStrategylessApiClient>();

@@ -1,9 +1,8 @@
+using OrlemSoftware.Client.Demo.ApiClient.Config;
+using OrlemSoftware.Client.Di.Microsoft;
+using OrlemSoftware.Client.Logging.Microsoft;
 
-using Os.Client.Demo.ApiClient.Config;
-using Os.Client.Di.Microsoft;
-using Os.Client.Logging.Microsoft;
-
-namespace Os.Client.Demo
+namespace OrlemSoftware.Client.Demo
 {
     public class Program
     {

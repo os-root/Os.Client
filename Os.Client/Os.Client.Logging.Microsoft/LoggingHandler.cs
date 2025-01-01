@@ -2,7 +2,7 @@
 using System.Text;
 using Microsoft.Extensions.Logging;
 
-namespace Os.Client.Logging.Microsoft;
+namespace OrlemSoftware.Client.Logging.Microsoft;
 
 public class LoggingHandler : DelegatingHandler
 {

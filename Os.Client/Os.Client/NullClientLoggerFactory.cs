@@ -1,6 +1,6 @@
-﻿using Os.Client.Interfaces;
+﻿using OrlemSoftware.Client.Abstractions;
 
-namespace Os.Client;
+namespace OrlemSoftware.Client;
 
 public class NullClientLoggerFactory<TConfiguration> : IClientLoggerFactory<TConfiguration>
     where TConfiguration : IApiClientConfiguration

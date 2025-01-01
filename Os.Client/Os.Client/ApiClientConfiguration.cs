@@ -1,6 +1,6 @@
-﻿using Os.Client.Interfaces;
+﻿using OrlemSoftware.Client.Abstractions;
 
-namespace Os.Client;
+namespace OrlemSoftware.Client;
 
 public abstract record ApiClientConfiguration : IApiClientConfiguration
 {

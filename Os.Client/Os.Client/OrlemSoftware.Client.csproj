@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Os.Client\Os.Client.csproj" />
+    <ProjectReference Include="..\OrlemSoftware.Client.Abstractions\OrlemSoftware.Client.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

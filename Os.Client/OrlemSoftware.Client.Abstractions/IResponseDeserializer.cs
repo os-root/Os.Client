@@ -1,4 +1,4 @@
-﻿namespace Os.Client.Interfaces;
+﻿namespace OrlemSoftware.Client.Abstractions;
 
 public interface IResponseDeserializer<TConfiguration>: IResponseDeserializer
     where TConfiguration : IApiClientConfiguration

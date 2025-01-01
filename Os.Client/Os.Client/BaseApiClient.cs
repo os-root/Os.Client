@@ -1,8 +1,8 @@
 ﻿using System.Net.Http.Headers;
-using Os.Client.Interfaces;
-using Os.Client.Internal;
+using OrlemSoftware.Client.Abstractions;
+using OrlemSoftware.Client.Internal;
 
-namespace Os.Client;
+namespace OrlemSoftware.Client;
 
 public abstract class BaseApiClient
 {
@@ -29,15 +29,15 @@ public abstract class BaseApiClient
         _logger = loggerFactory.CreateLogger(this);
     }
 
-    public Task<TResponse> SendAsync<TResponse>(BaseApiRequest<TResponse> request)
-        => SendAsync(request, CancellationToken.None);
+    public Task<TResponse> Send<TResponse>(IApiClientRequest<TResponse> request)
+        => Send(request, CancellationToken.None);
 
-    public Task SendAsync(BaseApiRequest request)
-        => SendAsync(request, CancellationToken.None);
+    public Task Send(IApiClientRequest request)
+        => Send(request, CancellationToken.None);
 
-    public async Task<TResponse> SendAsync<TResponse>(BaseApiRequest<TResponse> request, CancellationToken cancellationToken)
+    public async Task<TResponse> Send<TResponse>(IApiClientRequest<TResponse> request, CancellationToken cancellationToken)
     {
-        var response = await Send(request, cancellationToken);
+        var response = await SendInternal(request, cancellationToken);
 
         try
         {
@@ -67,9 +67,9 @@ public abstract class BaseApiClient
         }
     }
 
-    public async Task SendAsync(BaseApiRequest request, CancellationToken cancellationToken)
+    public async Task Send(IApiClientRequest request, CancellationToken cancellationToken)
     {
-        var response = await Send(request, cancellationToken);
+        var response = await SendInternal(request, cancellationToken);
         if (!await CheckIfResponseSucceeded(response))
             throw new ApiException
             {
@@ -78,8 +78,12 @@ public abstract class BaseApiClient
             };
     }
 
-    private async Task<HttpResponseMessage> Send(BaseApiRequest request, CancellationToken cancellationToken)
+    private async Task<HttpResponseMessage> SendInternal(IApiClientRequest req, CancellationToken cancellationToken)
     {
+        if (req is not ApiClientRequest request)
+            throw new InvalidOperationException($"Request of type {req.GetType()} cannot be used with ApiClient {GetType()}. " +
+                                                $"Request must be inherited from {typeof(ApiClientRequest)}");
+
         request.InternalSerializer ??= _serializer;
         var message = await MakeMessage(request);
         var response = await _httpClient.SendAsync(message, cancellationToken);
@@ -113,7 +117,7 @@ public abstract class BaseApiClient
     protected virtual Task<bool> CheckIfResponseSucceeded(HttpResponseMessage response)
         => _responseSuccessChecker.CheckResponseIsSuccessful(response);
 
-    private async Task<HttpRequestMessage> MakeMessage(BaseApiRequest request)
+    private async Task<HttpRequestMessage> MakeMessage(ApiClientRequest request)
     {
         var absPath = _httpClient.BaseAddress?.AbsolutePath;
         var url = request.GetUrl();

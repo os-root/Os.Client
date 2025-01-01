@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using Os.Client.Interfaces;
+using OrlemSoftware.Client.Abstractions;
 
-namespace Os.Client.Logging.Microsoft;
+namespace OrlemSoftware.Client.Logging.Microsoft;
 
 internal class ClientLoggingAdapter<T> : IClientLogger
 {

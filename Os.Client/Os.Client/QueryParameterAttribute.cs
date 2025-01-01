@@ -1,4 +1,4 @@
-﻿namespace Os.Client;
+﻿namespace OrlemSoftware.Client;
 
 public class QueryParameterAttribute : Attribute
 {

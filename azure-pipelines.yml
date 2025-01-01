@@ -3,8 +3,8 @@
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
-trigger:
-- release/*
+# trigger:
+# - release/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -19,20 +19,39 @@ steps:
   inputs:
     version: '8.x'
 
-- task: NuGetToolInstaller@1
+- task: DotNetCoreCLI@2
   inputs:
-    checkLatest: true
+    command: 'build'
+    projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj;!**/Os.Client.Demo.csproj'
+    packagesToPack: '**/*.csproj;!**/OrlemSoftware.Client.Demo.csproj'
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'nugetVer'
 
-- task: NuGetCommand@2
+- task: PowerShell@2
   inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'nuget.org'
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Abstractions.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Serialization.Text.Json.Di.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Logging.Microsoft.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'nuget push $(Build.ArtifactStagingDirectory)/OrlemSoftware.Client.Serialization.Text.Json.$(nugetVer).nupkg -ApiKey $(myNuGetApiKey) -Source https://api.nuget.org/v3/index.json -SkipDuplicate'
