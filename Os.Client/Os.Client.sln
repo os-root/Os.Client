@@ -19,7 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{57
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrlemSoftware.Client.Demo", "Os.Client.Demo\OrlemSoftware.Client.Demo.csproj", "{2234D058-690D-4432-B051-C591DB206365}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrlemSoftware.Client.Abstractions", "OrlemSoftware.Client.Abstractions\OrlemSoftware.Client.Abstractions.csproj", "{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrlemSoftware.Client.Abstractions", "OrlemSoftware.Client.Abstractions\OrlemSoftware.Client.Abstractions.csproj", "{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrlemSoftware.Client.Mock", "OrlemSoftware.Client.Mock\OrlemSoftware.Client.Mock.csproj", "{2BE086C5-1F3D-49AD-829E-230FAAD95E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrlemSoftware.Client.Mock.Di.Microsoft", "OrlemSoftware.Client.Mock.Di.Microsoft\OrlemSoftware.Client.Mock.Di.Microsoft.csproj", "{A4C0E918-24A0-468C-A105-51C8B80ED381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrlemSoftware.Client.Mock.Demo", "OrlemSoftware.Client.Mock.Demo\OrlemSoftware.Client.Mock.Demo.csproj", "{39C93FBB-B18C-4E2C-BB23-8DDB160C6557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +61,18 @@ Global
 		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A28CE676-3EFE-4050-BF83-8CF65E94EFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE086C5-1F3D-49AD-829E-230FAAD95E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE086C5-1F3D-49AD-829E-230FAAD95E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE086C5-1F3D-49AD-829E-230FAAD95E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE086C5-1F3D-49AD-829E-230FAAD95E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C0E918-24A0-468C-A105-51C8B80ED381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C0E918-24A0-468C-A105-51C8B80ED381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C0E918-24A0-468C-A105-51C8B80ED381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C0E918-24A0-468C-A105-51C8B80ED381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C93FBB-B18C-4E2C-BB23-8DDB160C6557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C93FBB-B18C-4E2C-BB23-8DDB160C6557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C93FBB-B18C-4E2C-BB23-8DDB160C6557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C93FBB-B18C-4E2C-BB23-8DDB160C6557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +81,8 @@ Global
 		{58EB6AEE-5BD1-42E8-A1E5-3CCE8EA59AE3} = {61E00A60-1E57-4F9C-8914-3233DF31A5D4}
 		{2F6FDDC6-B708-435A-8B98-49D23EF18FC3} = {61E00A60-1E57-4F9C-8914-3233DF31A5D4}
 		{2234D058-690D-4432-B051-C591DB206365} = {5723F0F3-8591-4E9E-AD4A-89ECA193BDA7}
+		{A4C0E918-24A0-468C-A105-51C8B80ED381} = {61E00A60-1E57-4F9C-8914-3233DF31A5D4}
+		{39C93FBB-B18C-4E2C-BB23-8DDB160C6557} = {5723F0F3-8591-4E9E-AD4A-89ECA193BDA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71A602F5-FFFF-4713-AF85-7087523F46D9}
